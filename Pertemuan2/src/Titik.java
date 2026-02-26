@@ -4,8 +4,6 @@
 *   Tanggal     : 26 Februari 2026
 */
 
-
-
 public class Titik {
     /***************ATRIBUT***************/
     double absis;
@@ -16,7 +14,7 @@ public class Titik {
     //konstruktor untuk membuat titik (0,0)
     Titik(){
         this.absis = 0;
-        ordinat = 0;
+        this.ordinat = 0;
         counterTitik++;
     }
 
