@@ -4,6 +4,8 @@
 *   Tanggal     : 26 Februari 2026
 */
 
+
+
 public class Titik {
     /***************ATRIBUT***************/
     double absis;
@@ -55,10 +57,12 @@ public class Titik {
         System.out.println("Titik (" + absis + ", " + ordinat + ")");
     }
 
+    // mencetak banyak titik yang sudah dibuat
     static int getCounterTitik(){
         return counterTitik;
     }
 
+    // mencetak nilai kuadran dari suatu titik
     int getKuadran(){
         if (this.absis == 0 && this.ordinat == 0){
             return -1;
@@ -84,6 +88,45 @@ public class Titik {
 
         return 0;
     }
+
+    // mencetak jarak antara titik dengan titik pusat (0,0)
+    double getJarakPusat(){
+        return Math.sqrt(Math.pow(this.absis, 2) + Math.pow(this.ordinat, 2));
+    }
+
+    // mencetak jarak antara titik dengan titik T (x,y)
+    double getJarak(Titik T){
+        return Math.sqrt(Math.pow(this.absis - T.getAbsis(), 2) + Math.pow(this.ordinat - T.getOrdinat(), 2));
+    }
+
+    // melakukan refleksi terhadap sumbu x pada titik 
+    void refleksiX(){
+        setOrdinat(this.ordinat*(-1)); 
+    }
+
+    // melakukan refleksi terhadap sumbu y pada titik
+    void refleksiY(){
+        setAbsis(this.absis*(-1));
+    }
+
+    // mencetak titik baru hasil refleksi dari titik terhadap sumbu x
+    Titik getRefleksiX(){
+        Titik Tnew = new Titik();
+        Tnew.setAbsis(this.absis);
+        Tnew.setOrdinat(this.ordinat*(-1));
+
+        return Tnew;
+    }
+
+    // mencetak titik baru hasil refleksi dari titik terhadap sumbu y
+    Titik getRefleksiY(){
+        Titik Tnew = new Titik();
+        Tnew.setAbsis(this.absis*(-1));
+        Tnew.setOrdinat(this.ordinat);
+
+        return Tnew;
+    }
+
 } //end class Titik
 
 

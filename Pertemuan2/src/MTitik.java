@@ -24,6 +24,22 @@ public class MTitik {
 
         System.out.println("Jumlah Objek Titik = " + Titik.getCounterTitik());
         System.out.println("Jumlah Objek Titik = " + T4.getCounterTitik());
+        System.out.println("Kuadran dari T4 = " + T4.getKuadran());
+        System.out.println("Jarak T3 dengan titik pusat = " + T3.getJarakPusat());
+        System.out.println("Jarak T1 dengan T4 adalah = " + T1.getJarak(T4));
+        System.out.print("Refleksi titik T1 terhadap sumbu x = ");
+        T1.refleksiX();
+        T1.prinTitik();
+        System.out.print("Refleksi titik T2 terhadap sumbu y = ");
+        T2.refleksiY();
+        T2.prinTitik();
+
+        Titik T5 = T4.getRefleksiX();
+        Titik T6 = T4.getRefleksiY();
+        System.out.print("Titik baru hasil refleksi titik T4 terhadap sumbu x = ");
+        T5.prinTitik();
+        System.out.print("Titik baru hasil refleksi titik T4 terhadap sumbu y = ");
+        T6.prinTitik();
 
     }
 }
