@@ -1,5 +1,5 @@
-/*  Nama File   : Titik.java
-*   Deskripsi   : berisi atribut dan method dalam class Titik
+/*  Nama File   : Garis.java
+*   Deskripsi   : berisi atribut dan method dalam class Garis
 *   Pembuat     : Husni Ulyaa Khanifah/24060124120021
 *   Tanggal     : 26 Februari 2026
 */
@@ -18,9 +18,9 @@ public class Garis {
         counterGaris++;
     }
 
-    Garis(double x1, double y1, double x2, double y2){
-        this.T1 = new Titik(x1, y1);
-        this.T2 = new Titik(x2, y2);
+    Garis(Titik P1, Titik P2){
+        this.T1 = P1;
+        this.T2 = P2;
         counterGaris++;
     }
 
@@ -42,6 +42,11 @@ public class Garis {
         T2.setOrdinat(T.getOrdinat());
     }
 
+    void setGaris(Titik p1, Titik p2){
+        this.T1 = p1;
+        this.T2 = p2;
+    }
+
     static int getCounterGaris(){
         return counterGaris;
     }
@@ -51,7 +56,7 @@ public class Garis {
     }
 
     double gradien(){
-        return (T2.getOrdinat()-T1.getOrdinat())/(T2.getAbsis()-T2.getAbsis());
+        return (T2.getOrdinat()-T1.getOrdinat())/(T2.getAbsis()-T1.getAbsis());
     }
 
     Titik titikTengah(){
@@ -89,6 +94,7 @@ public class Garis {
         // y*x2 - y*x1 - y1*x2 + y1*x1 = y2*x - y1*x - x1*y2 + x1*y1
         // y*x2 - y*x1 = y2*x - y1*x - x1*y2 + y1*x2
         // y*x2 - y*x1 = y2*x - y1*x - (x1*y2 - y1*x2)
+        char operasi = ' ';
         double koefY = T2.getAbsis() - T1.getAbsis();
         double koefX = (T2.getOrdinat() - T1.getOrdinat());
         double konst = ((T1.getAbsis() * T2.getOrdinat()) - (T1.getOrdinat() * T2.getAbsis()));
@@ -99,8 +105,15 @@ public class Garis {
                 konst = konst/koefY;
             }
         }
-        System.out.println("y = " + koefX + "x " + konst);
-
+        if (konst < 0){
+            operasi = '+';
+        }
+        else{
+            if (konst >= 0){
+                operasi = '-';
+            }
+        }
+        System.out.println("y = " + koefX + "x " + operasi + " " + Math.abs(konst));
     }
 
 }
