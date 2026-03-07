@@ -1,5 +1,6 @@
 public class MMahasiswa {
     public static void main(String[] args) {
+        // Informasi Dosen [Class Dosen]
         System.out.println(("Informasi Dosen: "));
         Dosen D1 = new Dosen();
         Dosen D2 = new Dosen("238382", "Dosen2", "Informatika");
@@ -31,6 +32,7 @@ public class MMahasiswa {
         D3.printDosen();
         System.out.println();
 
+        // informasi kendaraan [Class Kendaraan]
         System.out.println("Informasi Kendaraan: ");
         Kendaraan K1 = new Kendaraan();
         Kendaraan K2 = new Kendaraan("AB 123 Y", "BMW");
@@ -59,6 +61,7 @@ public class MMahasiswa {
         K3.printKendaraan();
         System.out.println();
 
+        // Informasi Mata Kuliah [Class MataKuliah]
         System.out.println("Informasi Mata Kuliah: ");
         MataKuliah MK1 = new MataKuliah();
         MataKuliah MK2 = new MataKuliah("MK345", "ASA", 3);
@@ -98,6 +101,7 @@ public class MMahasiswa {
         MK4.printMatKul();
         System.out.println();
 
+        // Informasi Mahasiswa [Class Mahasiswa]
         System.out.println("Informasi Mahasiswa: ");
         Mahasiswa Mhs1 = new Mahasiswa();
         Mahasiswa Mhs2 = new Mahasiswa();
