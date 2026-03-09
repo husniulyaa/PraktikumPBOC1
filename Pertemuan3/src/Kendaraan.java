@@ -11,6 +11,7 @@ public class Kendaraan {
     private String jenis;
 
     /***************METHOD***************/
+    /************KONSTRUKTOR*************/
     // Konstruktor kendaraan tanpa parameter
     public Kendaraan(){
         this.noPlat = "";
@@ -23,6 +24,7 @@ public class Kendaraan {
         this.jenis = jenis;
     }
 
+    /**************SELEKTOR**************/
     // Selektor kendaraan untuk mengembalikan plat nomor kendaraan 
     public String getNoPlat(){
         return this.noPlat;
@@ -33,6 +35,7 @@ public class Kendaraan {
         return this.jenis;
     }
 
+    /**************MUTATOR**************/
     // Mutator kendaraan untuk set plat nomor kendaraan sesuai dengan input-an
     public void setNoPlat(String plat){
         this.noPlat = plat;
@@ -43,6 +46,7 @@ public class Kendaraan {
         this.jenis = jenis;
     }
 
+    /*************METHOD LAIN*************/
     // Menampilkan informasi kendaraan ke layar
     public void printKendaraan(){
         System.out.println("No Plat: "+this.noPlat+", jenis: "+this.jenis);

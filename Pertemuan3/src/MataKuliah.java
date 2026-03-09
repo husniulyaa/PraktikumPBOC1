@@ -12,6 +12,7 @@ public class MataKuliah {
     private int sks;
 
     /***************METHOD***************/
+    /************KONSTRUKTOR*************/
     // Konstruktor tanpa parameter
     public MataKuliah(){
         this.idMatkul = "";
@@ -26,6 +27,7 @@ public class MataKuliah {
         this.sks = sks;
     }
 
+    /**************SELEKTOR**************/
     // Selektor MataKuliah untuk mengembalikan nilai ID mata kuliah
     public String getID(){
         return this.idMatkul;
@@ -41,6 +43,7 @@ public class MataKuliah {
         return this.sks;
     }
 
+    /***************MUTATOR***************/
     // Mutator MataKuliah untuk set id mata kuliah sesuai dengan input-an
     public void setID(String ID){
         this.idMatkul = ID;
@@ -56,6 +59,7 @@ public class MataKuliah {
         this.sks = sks;
     }
 
+    /*************METHOD LAIN*************/
     // Menampilkan informasi mata kuliah ke layar
     public void printMatKul(){
         System.out.println("ID: " + this.idMatkul + ", nama: " + this.nama + ", SKS: " + this.sks);

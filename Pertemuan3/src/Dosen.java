@@ -12,6 +12,7 @@ public class Dosen{
     private String prodi;
 
     /***************METHOD***************/
+    /*************KONSTRUKTOR************/
     // konstruktor tanpa parameter
     public Dosen(){
         this.NIP = "";
@@ -26,6 +27,7 @@ public class Dosen{
         this.prodi = prodi; 
     }
 
+    /**************SELEKTOR**************/
     // Selektor untuk mendapatkan NIP dosen
     public String getNIP(){
         return this.NIP;
@@ -41,6 +43,7 @@ public class Dosen{
         return this.prodi;
     }
 
+    /**************MUTATOR**************/
     // Mutator untuk set NIP dosen sesuai input-an
     public void setNIP(String NIP){
         this.NIP = NIP;
@@ -56,6 +59,7 @@ public class Dosen{
         this.prodi = Prodi;
     }
 
+    /*************METHOD LAIN*************/
     // Menampilkan data dosen ke layar
     public void printDosen(){
         System.out.println("NIP: " + this.NIP + ", Nama: " + this.nama + ", Prodi: " + this.prodi);

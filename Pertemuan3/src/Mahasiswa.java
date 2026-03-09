@@ -18,6 +18,7 @@ public class Mahasiswa {
     private Kendaraan kendaraan;
 
     /***************METHOD***************/
+    /************KONSTRUKTOR*************/
     // konstruktor mahasiswa tanpa parameter
     public Mahasiswa(){
         this.NIM = "";
@@ -38,6 +39,7 @@ public class Mahasiswa {
         this.kendaraan = new Kendaraan();
     }
 
+    /**************SELEKTOR**************/
     // Selektor mahasiswa untuk mendapatkan NIM
     public String getNIM(){
         return this.NIM;
@@ -71,6 +73,7 @@ public class Mahasiswa {
         return this.kendaraan;
     }
 
+    /*************MUTATOR*************/
     // Mutator untuk set NIM
     public void setNIM(String NIM){
         this.NIM = NIM;
@@ -96,6 +99,7 @@ public class Mahasiswa {
         this.kendaraan = kendaraan;
     }
 
+    /************METHOD LAIN************/
     // Menambahkan mata kuliah ke dalam list mata kuliah mahasiswa
     public void addMatKul(MataKuliah newMatKul){
         listMatKul.add(newMatKul);
