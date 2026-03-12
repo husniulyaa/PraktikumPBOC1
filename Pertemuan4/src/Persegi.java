@@ -1,3 +1,9 @@
+/*  Nama File   : Persegi.java
+*   Deskripsi   : berisi atribut dan method dalam class child Persegi 
+*   Tanggal     : 12 Maret 2026
+*   Lab         : PBO C1
+*/
+
 public class Persegi extends BangunDatar {
     private double sisi;
 

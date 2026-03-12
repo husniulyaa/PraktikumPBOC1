@@ -1,3 +1,9 @@
+/*  Nama File   : BangunDatar.java
+*   Deskripsi   : berisi atribut dan method dalam class parent BangunDatar 
+*   Tanggal     : 12 Maret 2026
+*   Lab         : PBO C1
+*/
+
 public class BangunDatar {
     protected int jmlSisi;
     protected String warna;

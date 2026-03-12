@@ -1,3 +1,9 @@
+/*  Nama File   : Lingkaran.java
+*   Deskripsi   : berisi atribut dan method dalam class child Lingkaran 
+*   Tanggal     : 12 Maret 2026
+*   Lab         : PBO C1
+*/
+
 public class Lingkaran extends BangunDatar {
     private double jari;
 

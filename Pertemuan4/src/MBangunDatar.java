@@ -1,3 +1,9 @@
+/*  Nama File   : MBangunDatar.java
+*   Deskripsi   : berisi main dari class BangunDatar, Persegi, dan Lingkaran
+*   Tanggal     : 12 Maret 2026
+*   Lab         : PBO C1
+*/
+
 public class MBangunDatar {
     public static void main(String[] args) {
     BangunDatar P1 = new Persegi();
