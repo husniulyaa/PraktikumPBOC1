@@ -4,15 +4,19 @@
 *   Lab         : PBO C1
 */
 
+/***************MAIN CLASS***************/
 public class MBangunDatar {
     public static void main(String[] args) {
+    /*************OBJEK CLASS*************/
     BangunDatar P1 = new Persegi();
     BangunDatar L1 = new Lingkaran();
     BangunDatar P2 = new Persegi(10, "Putih", "Cream");
     BangunDatar L2 = new Lingkaran(8, "Blue", "Navy");
 
-    BangunDatar.printCounterBangunDatar();
-    System.out.println("Persegi P1: ");
+    /***************APLIKASI***************/
+    BangunDatar.printCounterBangunDatar(); // Menghitung jumlah objek yang terbuat
+
+    System.out.println("Persegi P1: "); // Informasi terkait objek persegi pertama
     System.out.println("Sisi: " + ((Persegi)(P1)).getSisi());
     System.out.println("Jumlah Sisi: " + P1.getJmlSisi());
     System.out.println("Border: " + P1.getBorder());
@@ -28,7 +32,7 @@ public class MBangunDatar {
     ((Persegi)(P1)).printInfo();
 
     System.out.println();
-    System.out.println("Persegi P2: ");
+    System.out.println("Persegi P2: "); // Informasi terkait objek persgei kedua
     System.out.println("Sisi: " + ((Persegi)(P2)).getSisi());
     System.out.println("Jumlah Sisi: " + P2.getJmlSisi());
     System.out.println("Border: " + P2.getBorder());
@@ -42,7 +46,7 @@ public class MBangunDatar {
     ((Persegi)(P2)).printInfo();
 
     System.out.println();
-    System.out.println("Lingkaran L1: ");
+    System.out.println("Lingkaran L1: "); // Informasi terkait objek lingkaran pertama
     System.out.println("Sisi: " + ((Lingkaran)(L1)).getJari());
     System.out.println("Jumlah Sisi: " + L1.getJmlSisi());
     System.out.println("Border: " + L1.getBorder());
@@ -55,7 +59,7 @@ public class MBangunDatar {
     ((Lingkaran)(L1)).printInfo();
 
     System.out.println();
-    System.out.println("Lingkaran L2: ");
+    System.out.println("Lingkaran L2: "); // Informasi terkait objek lingkaran kedua
     System.out.println("Sisi: " + ((Lingkaran)(L2)).getJari());
     System.out.println("Jumlah Sisi: " + L2.getJmlSisi());
     System.out.println("Border: " + L2.getBorder());
