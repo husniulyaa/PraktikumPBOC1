@@ -1,5 +1,6 @@
 /*  Nama File   : MManusia.java
 *   Deskripsi   : berisi main untuk pengujian class Manusia, PNS, Pengusaha, dan Petani
+*   Pembuat     : Husni Ulyaa Khanifah/24060124120021
 *   Tanggal     : 28 Maret 2026
 *   Lab         : PBO C1
 */

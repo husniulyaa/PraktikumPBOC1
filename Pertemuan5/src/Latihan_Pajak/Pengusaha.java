@@ -1,5 +1,6 @@
 /*  Nama File   : Pengusaha.java
 *   Deskripsi   : berisi atribut dan method pada class Pengusaha
+*   Pembuat     : Husni Ulyaa Khanifah/24060124120021
 *   Tanggal     : 28 Maret 2026
 *   Lab         : PBO C1
 */

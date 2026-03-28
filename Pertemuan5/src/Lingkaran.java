@@ -1,5 +1,6 @@
 /*  Nama File   : Lingkaran.java
 *   Deskripsi   : berisi atribut dan method dalam class child Lingkaran 
+*   Pembuat     : Husni Ulyaa Khanifah/24060124120021
 *   Tanggal     : 12 Maret 2026
 *   Lab         : PBO C1
 */

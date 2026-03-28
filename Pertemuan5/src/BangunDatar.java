@@ -1,5 +1,6 @@
 /*  Nama File   : BangunDatar.java
 *   Deskripsi   : berisi atribut dan method dalam class parent BangunDatar 
+*   Pembuat     : Husni Ulyaa Khanifah/24060124120021
 *   Tanggal     : 12 Maret 2026
 *   Lab         : PBO C1
 */
