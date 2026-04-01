@@ -13,16 +13,14 @@ public class Persegi extends BangunDatar implements IResize {
     /*************KONSTRUKTOR*************/
     // Konstruktor persegi tanpa parameter
     public Persegi(){
-        setJmlSisi(4);
+        super(4, "", "");
         this.sisi = 0;
     }
 
     // Konstruktor persegi dengan parameter sisi, warna, dan border sesuai input-an
     public Persegi(double sisi, String warna, String border){
+        super(4, warna, border);
         this.sisi = sisi;
-        setWarna(warna);
-        setBorder(border);
-        setJmlSisi(4);
     }
 
     /***************SELEKTOR***************/
@@ -36,6 +34,7 @@ public class Persegi extends BangunDatar implements IResize {
         return Math.pow(this.sisi, 2);
     }
 
+    @Override
     // Mengembalikan keliling dari bangun datar persegi
     public double getKeliling(){
         return 4*this.sisi;

@@ -71,5 +71,9 @@ public class MBangunDatar {
     System.out.println();
     System.out.println("Lingkaran 2 info: ");
     ((Lingkaran)(L2)).printInfo();
+
+    System.out.println();
+    System.out.println("isEqualLuas L1 and P1 = " + L1.isEqualLuas(P1));
+    System.out.println("isEqualKeliling L1 and P1 = " + L1.isEqualKeliling(P1));
     }
 }

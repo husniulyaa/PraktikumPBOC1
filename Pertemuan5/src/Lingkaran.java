@@ -30,11 +30,13 @@ public class Lingkaran extends BangunDatar implements IResize{
     }
 
     // Mengembalikan luas dari bangun datar lingkaran
+    @Override
     public double getLuas(){
         return Math.PI*Math.pow(jari, 2);
     }
 
     // Mengembalikan keliling dari bangun datar lingkaran
+    @Override
     public double getKeliling(){
         return 2*Math.PI*this.jari;
     }

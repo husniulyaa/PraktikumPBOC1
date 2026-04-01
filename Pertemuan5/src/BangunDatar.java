@@ -5,7 +5,7 @@
 *   Lab         : PBO C1
 */
 
-public class BangunDatar {
+public abstract class BangunDatar {
     /***************ATRIBUT***************/
     protected int jmlSisi;
     protected String warna;
@@ -60,6 +60,12 @@ public class BangunDatar {
     }
 
     /*************METHOD LAIN*************/
+    // Menghitung nilai luas dari suatu bangun datar
+    public abstract double getLuas();
+
+    // Menghitung keliling dari suatu bangun datar
+    public abstract double getKeliling();
+
     // Menampilkan informasi terkait bangun datar meliputi info jumlah sisi, warna, dan border bangun datar
     public void printInfo(){
         System.out.println("Jumlah Sisi: " + jmlSisi);
@@ -70,5 +76,15 @@ public class BangunDatar {
     // Menampilkan jumlah objek bangun datar yang sudah dibuat
     public static void printCounterBangunDatar(){
         System.out.println("Jumlah Objek Bangun Datar: " + counterBangunDatar);
+    }
+
+    // Mengembalikan nilai true jika luas dari bangun datar 1 sama dengan bangun datar 2, dan false jika sebaliknya
+    public boolean isEqualLuas(BangunDatar x){
+        return this.getLuas() == x.getLuas();
+    }
+
+    // Mengembalikan nilai true jika keliling dari bangun datar 1 sama dengan bangun datar 2, dan false jika sebaliknya
+    public boolean isEqualKeliling(BangunDatar x){
+        return this.getKeliling() == x.getKeliling();
     }
 }
