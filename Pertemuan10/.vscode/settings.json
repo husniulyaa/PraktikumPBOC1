@@ -1,0 +1,10 @@
+{
+  "java.project.sourcePaths": [
+    "src",
+    "jdbc_mhs_service/src"
+  ],
+  "java.project.referencedLibraries": [
+    "dist/lib/mysql-connector-j-8.0.33.jar",
+    "D:\\Downloads\\mysql-connector-j-9.7.0.jar"
+  ]
+}
