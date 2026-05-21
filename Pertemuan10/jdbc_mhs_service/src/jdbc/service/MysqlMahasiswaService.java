@@ -1,3 +1,9 @@
+/*  Nama File   : MysqlMahasiswaService.java
+*   Deskripsi   : berisi service untuk mengelola data mahasiswa pada database MySQL
+*   Pembuat     : Husni Ulyaa Khanifah/24060124120021
+*   Tanggal     : 21 Mei 2026
+*   Lab         : PBO C1
+*/
 package jdbc.service;
 
 import java.sql.Connection;
@@ -10,9 +16,12 @@ import jdbc.model.Mahasiswa;
 import jdbc.utilities.MysqlUtility;
 
 public class MysqlMahasiswaService {
+    /***************ATRIBUT***************/
     Connection koneksi = null;
 
-    // Constructor
+    /****************METHOD***************/
+    /*************KONSTRUKTOR*************/
+    // Konstruktor untuk membuat koneksi ke database MySQL.
     public MysqlMahasiswaService(){
         try {
             koneksi = MysqlUtility.getConnection();
@@ -21,17 +30,20 @@ public class MysqlMahasiswaService {
         }
     }
 
-    // Membuat objek mahasiswa.
+    /*************METHOD LAIN*************/
+    // Membuat objek mahasiswa berdasarkan id dan nama.
     public Mahasiswa makeMhsObject(int id, String nama){
         return new Mahasiswa(id, nama);
     }
 
-    /** Menambahkan data mahasiswa. */
+    // Menambahkan data mahasiswa ke tabel mahasiswa.
     public void add (Mahasiswa mhs){
+        // Menghentikan proses jika koneksi database belum tersedia.
         if (koneksi == null) {
             return;
         }
 
+        // Menyiapkan query insert data mahasiswa.
         String sql = "INSERT INTO mahasiswa (id, nama) VALUES (?, ?)";
         try {
             PreparedStatement statement = koneksi.prepareStatement(sql);
@@ -40,16 +52,19 @@ public class MysqlMahasiswaService {
             statement.executeUpdate();
             statement.close();
         } catch (SQLException ex) {
+            // Menampilkan pesan error jika proses insert gagal.
             System.out.println("Gagal insert mahasiswa: " + ex.getMessage());
         }
     }
 
-    /** Update data mahasiswa. */
+    // Mengubah data mahasiswa yang sudah ada pada tabel mahasiswa.
     public void update (Mahasiswa mhs){
+        // Menghentikan proses jika koneksi database belum tersedia.
         if (koneksi == null) {
             return;
         }
 
+        // Menyiapkan query update nama mahasiswa berdasarkan id.
         String sql = "UPDATE mahasiswa SET nama = ? WHERE id = ?";
         try {
             PreparedStatement statement = koneksi.prepareStatement(sql);
@@ -58,16 +73,19 @@ public class MysqlMahasiswaService {
             statement.executeUpdate();
             statement.close();
         } catch (SQLException ex) {
+            // Menampilkan pesan error jika proses update gagal.
             System.out.println("Gagal update mahasiswa: " + ex.getMessage());
         }
     }
 
-    /** Delete data mahasiswa sesuai id. */
+    // Menghapus data mahasiswa sesuai id.
     public void delete(int id){
+        // Menghentikan proses jika koneksi database belum tersedia.
         if (koneksi == null) {
             return;
         }
 
+        // Menyiapkan query delete mahasiswa berdasarkan id.
         String sql = "DELETE FROM mahasiswa WHERE id = ?";
         try {
             PreparedStatement statement = koneksi.prepareStatement(sql);
@@ -75,22 +93,26 @@ public class MysqlMahasiswaService {
             statement.executeUpdate();
             statement.close();
         } catch (SQLException ex) {
+            // Menampilkan pesan error jika proses delete gagal.
             System.out.println("Gagal delete mahasiswa: " + ex.getMessage());
         }
     }
 
-    /** Ambil mahasiswa sesuai id. */
+    // Mengambil data mahasiswa sesuai id.
     public Mahasiswa getById(int id){
+        // Mengembalikan null jika koneksi database belum tersedia.
         if (koneksi == null) {
             return null;
         }
 
+        // Menyiapkan query select mahasiswa berdasarkan id.
         String sql = "SELECT id, nama FROM mahasiswa WHERE id = ?";
         try {
             PreparedStatement statement = koneksi.prepareStatement(sql);
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
 
+            // Membuat objek mahasiswa jika data ditemukan.
             Mahasiswa mahasiswa = null;
             if (resultSet.next()) {
                 mahasiswa = new Mahasiswa(
@@ -103,23 +125,29 @@ public class MysqlMahasiswaService {
             statement.close();
             return mahasiswa;
         } catch (SQLException ex) {
+            // Menampilkan pesan error jika proses pengambilan data gagal.
             System.out.println("Gagal ambil mahasiswa: " + ex.getMessage());
             return null;
         }
     }
 
-    /** Ambil semua isi tabel mahasiswa. */
+    // Mengambil semua isi tabel mahasiswa.
     public List<Mahasiswa> getAll (){
+        // Membuat list untuk menampung seluruh data mahasiswa.
         List<Mahasiswa> listMahasiswa = new ArrayList<>();
+
+        // Mengembalikan list kosong jika koneksi database belum tersedia.
         if (koneksi == null) {
             return listMahasiswa;
         }
 
+        // Menyiapkan query select semua data mahasiswa.
         String sql = "SELECT id, nama FROM mahasiswa ORDER BY id";
         try {
             PreparedStatement statement = koneksi.prepareStatement(sql);
             ResultSet resultSet = statement.executeQuery();
 
+            // Menambahkan setiap data hasil query ke dalam list.
             while (resultSet.next()) {
                 Mahasiswa mahasiswa = new Mahasiswa(
                         resultSet.getInt("id"),
@@ -131,6 +159,7 @@ public class MysqlMahasiswaService {
             resultSet.close();
             statement.close();
         } catch (SQLException ex) {
+            // Menampilkan pesan error jika proses pengambilan semua data gagal.
             System.out.println("Gagal ambil semua mahasiswa: " + ex.getMessage());
         }
 
